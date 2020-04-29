@@ -1,4 +1,3 @@
-
 /*
 Author      : W.G.M.V.S Wijesundara  IT17035118
 description : Creating the fruit detail class show details of the each fruits

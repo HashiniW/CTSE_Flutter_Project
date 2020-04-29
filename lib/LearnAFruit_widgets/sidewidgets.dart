@@ -1,3 +1,9 @@
+import 'dart:async';
+import 'package:finalproject/LearnAFruitproviders/LearnAFruit_provider.dart';
+import 'package:finalproject/LearnAFruitUtilities/constColourAttributer.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rxdart/rxdart.dart';
 /*
 Author      : W.G.M.V.S Wijesundara  IT17035118
 description : Creating the About Us Page
@@ -7,37 +13,39 @@ reference3: https://github.com/TechieBlossom/sidebar_animation_flutter
 reference4: https://apkpure.com/flutter-mobile-restaurantui-kit/com.jideguru.restaurant_ui_kit
  */
 
-import 'dart:async';
-import 'package:finalproject/CrudControllers/authentication_Controller.dart';
-import 'package:finalproject/LearnAFruitproviders/LearnAFruit_provider.dart';
-import 'package:finalproject/LearnAFruitUtilities/constColourAttributer.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:rxdart/rxdart.dart';
-
 //Creating the UI Level to Display In About Us
 //reference3: https://github.com/TechieBlossom/sidebar_animation_flutter
 class SideBar extends StatefulWidget {
   @override
   _SideBarState createState() => _SideBarState();
 }
-
+//Creating the UI Level to Display In About Us
 class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
+  //declare private animation controller
   AnimationController _animationController;
+  //declare checker for whether side bar open or not controller
   StreamController<bool> isSidebarOpenedStreamController;
+  //declare handler for sidebar open check
   Stream<bool> isSidebarOpenedStream;
+  //declare checker for sidebar close
   StreamSink<bool> isSidebarOpenedSink;
+  //declare const variable for duration time for the opening
   final _animationDuration = const Duration(milliseconds: 500);
 
+  ////maintaining the state of the sidebar controllers
   @override
   void initState() {
     super.initState();
+    //set the animation duration with assigning to the controller
     _animationController = AnimationController(vsync: this, duration: _animationDuration);
+    //set the state to open checker to check
     isSidebarOpenedStreamController = PublishSubject<bool>();
+    //set the state to open checker to check
     isSidebarOpenedStream = isSidebarOpenedStreamController.stream;
+    //set the state to open checker to check
     isSidebarOpenedSink = isSidebarOpenedStreamController.sink;
   }
-
+  //method to close the sidebar using cross mark with set the state of all controllers to dispose
   @override
   void dispose() {
     _animationController.dispose();
@@ -45,25 +53,28 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     isSidebarOpenedSink.close();
     super.dispose();
   }
-
+//check the button action and handle the animation with slider of navigation bar
   void onIconPressed() {
     final animationStatus = _animationController.status;
     final isAnimationCompleted = animationStatus == AnimationStatus.completed;
-
+//check if animation complete
     if (isAnimationCompleted) {
+      //then display the navigation bar in the whole page
       isSidebarOpenedSink.add(false);
       _animationController.reverse();
     } else {
+      //then close the navigation bar from the page
       isSidebarOpenedSink.add(true);
       _animationController.forward();
     }
   }
-
+//ui level handler
   @override
   Widget build(BuildContext context) {
+    //get the screen width
     final screenWidth = MediaQuery.of(context).size.width;
-    AuthenticationController authNotifier = Provider.of<AuthenticationController>(context);
 
+//display the side bar in the about us screen
     return StreamBuilder<bool>(
       initialData: false,
       stream: isSidebarOpenedStream,
@@ -121,8 +132,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           radius: 40,
                         ),
                       ),
-                    
                     //showing the dark mode white mode changer
+                 // reference4: https://apkpure.com/flutter-mobile-restaurantui-kit/com.jideguru.restaurant_ui_kit
                       ListTile(
                         title: Text(
                           "Dark Mode",
@@ -131,7 +142,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-
+                      //check whether the  scroller button boolean value true or false and set the app theme into dark value or to light value
                         trailing: Switch(
                           value: Provider.of<LearnAFruitProvider>(context).theme == Constants.lightTheme
                               ? false
@@ -145,9 +156,12 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                   .setTheme(Constants.lightTheme, "light");
                             }
                           },
+                          //get the accentColor for the theme
                           activeColor: Theme.of(context).accentColor,
                         ),
                       ),
+
+
                     ],
                   ),
                 ),
@@ -182,7 +196,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     );
   }
 }
-
+//creating a clipper class show the attachment icon above in the left side to open the navigation bar
+//reference3: https://github.com/TechieBlossom/sidebar_animation_flutter
 class MenuWidget extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -201,7 +216,7 @@ class MenuWidget extends CustomClipper<Path> {
     path.close();
     return path;
   }
-
+// check whether the clipper is press then open the navigation bar
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) {
     return true;

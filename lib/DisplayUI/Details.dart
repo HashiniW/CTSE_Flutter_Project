@@ -13,6 +13,7 @@ class ProductDetails extends StatefulWidget {
   _ProductDetailsState createState() => _ProductDetailsState();
 }
 
+//UI Layout
 class _ProductDetailsState extends State<ProductDetails> {
   bool isFav = false;
   @override

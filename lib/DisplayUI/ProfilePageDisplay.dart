@@ -1,5 +1,5 @@
 /*
-Author      : IT17136402 - W.M.H.B. Warnakulasooriya
+Author      : IT17136402 - W.M.H.B. Warnakulasooriya, W.G.M.V.S Wijesundara  IT17035118
 Description : Creating the main screen to direct to the favorite fruit list
 Reference-1 : https://github.com/JulianCurrie/CwC_Flutter
 Reference-2 : https://www.youtube.com/watch?v=bjMw89L61FI
@@ -217,6 +217,7 @@ class _ProfileUIState extends State<ProfileUI> {
     print("_imageUrl $_imageUrl");
   }
 
+//UI Layout
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -292,7 +293,7 @@ class _ProfileUIState extends State<ProfileUI> {
             ),
             SizedBox(height: 16),
 
-            //reference4: https://apkpure.com/flutter-mobile-restaurantui-kit/com.jideguru.restaurant_ui_kit
+            //reference5: https://apkpure.com/flutter-mobile-restaurantui-kit/com.jideguru.restaurant_ui_kit
             //this method switches the theme type to dark mode to white mode vise versa using app 
             ListTile(
               title: Text(

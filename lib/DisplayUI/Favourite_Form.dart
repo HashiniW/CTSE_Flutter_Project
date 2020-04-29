@@ -157,6 +157,7 @@ class _FavouriteFormState extends State<FavouriteForm> {
     );
   }
 
+//validating fruit family field
   Widget _buildCategoryField() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'Fruit Family'),
@@ -228,6 +229,7 @@ class _FavouriteFormState extends State<FavouriteForm> {
     print("_imageUrl $_imageUrl");
   }
 
+  //UI Layout
   @override
   Widget build(BuildContext context) {
     return Scaffold(

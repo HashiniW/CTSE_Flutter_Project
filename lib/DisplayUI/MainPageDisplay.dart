@@ -42,6 +42,7 @@ class _HomeScreenUIState extends State<HomeScreenUI> with AutomaticKeepAliveClie
 
   File _image;
 
+//UI Layout
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -87,7 +88,7 @@ class _HomeScreenUIState extends State<HomeScreenUI> with AutomaticKeepAliveClie
                   },
                   child: Text(
 
-                    //logginout from the app
+                    //logging out from the app
                     "Logout",
                     style: TextStyle(fontSize: 22, color: Colors.lightBlue),
                   ),

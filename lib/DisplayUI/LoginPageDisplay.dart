@@ -21,12 +21,17 @@ class LoginPageDisplayUI extends StatefulWidget {
 }
 
 class _LoginPageDisplayUIState extends State<LoginPageDisplayUI> {
+  
+  //declaring the global form key to maintain form state
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  
+  //creating the text field controller to password field
   final TextEditingController _passwordController = new TextEditingController();
+ 
   AuthMode _authMode = AuthMode.Login;
-
   UserCrudModel _user = UserCrudModel();
 
+  //maintaining the state of the authentication controller
   @override
   void initState() {
     AuthenticationController authNotifier = Provider.of<AuthenticationController>(context, listen: false);
