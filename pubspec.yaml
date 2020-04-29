@@ -1,0 +1,85 @@
+name: finalproject
+description: ctse final project
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 5.0+50
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.13.0+1
+  provider: ^3.1.0
+  image_picker: ^0.6.1+11
+  firebase_storage: ^3.0.8
+  path: ^1.6.4
+  uuid: ^2.0.4
+  introduction_screen: ^1.0.5+2
+  shared_preferences: ^0.5.6
+  font_awesome_flutter: ^8.5.0
+  carousel_slider: ^1.4.1
+  flutter_bloc: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_launcher_icons: "^0.7.3"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/app_logo.png"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/logo.png
+    - assets/app_logo.png
+    - assets/book.png
+    - assets/cute_apple.jpg
+    - assets/intro1.png
+    - assets/intro2.png
+    - assets/intro3.png
+    - assets/intro4.jpg
+    - assets/intro5.jpg
+    - assets/intro6.jpg
+    - assets/fruit1.jpg
+    - assets/fruit2.jpg
+    - assets/fruit3.jpg
+    - assets/fruit4.jpg
+    - assets/fruit5.jpg
+    - assets/fruit6.jpg
+    - assets/fruit7.jpg
+    - assets/fruit8.jpg
+    - assets/fruit9.jpg
+    - assets/fruit10.jpg
+    - assets/fruit11.jpg
+    - assets/fruit12.jpg
+    - assets/cm4.jpeg
+    - assets/v.bmp
+    - assets/hashini.bmp
+    - assets/learnafruit.gif

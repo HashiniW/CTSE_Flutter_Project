@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "474105819930",
+    "firebase_url": "https://learn-a-fruit-159ce.firebaseio.com",
+    "project_id": "learn-a-fruit-159ce",
+    "storage_bucket": "learn-a-fruit-159ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474105819930:android:f9ddd8ae76d5a946dc32a3",
+        "android_client_info": {
+          "package_name": "ctse.learnafruit2020.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474105819930-1lp9gtqd1f170334bvlvrjgrhcp1e0ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDymqMTAcFU412MVXY9BRPG_CNlQhZkIKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474105819930-1lp9gtqd1f170334bvlvrjgrhcp1e0ni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
